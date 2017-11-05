@@ -7,7 +7,7 @@
   "scripts": {
     "dev:build:server":"webpack --config webpack.server.js"
   },
-  "author": "",
+  "author": "Jaimin Desai",
   "license": "ISC",
   "dependencies": {
     "axios": "0.16.2",
