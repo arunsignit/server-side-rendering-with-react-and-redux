@@ -14,6 +14,7 @@ export default function handleResponseRender(req, res) {
     res.end(renderPage(htmlContent));
 }
 
+
 function renderPage(htmlcontent){
     return `
 	<!DOCTYPE html>
