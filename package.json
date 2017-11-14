@@ -1,14 +1,13 @@
-
-  {
+{
   "name": "react-ssr",
   "version": "1.0.0",
   "description": "Server side rendering project",
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
-    "dev:server":"nodemon --watch build --exec \"node build/bundle.js\"" ,
-    "dev:build:server":"webpack --config webpack.server.js --watch",
-    "dev:build:client":"webpack --config webpack.client.js --watch"
+    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
+    "dev:build:server": "webpack --config webpack.server.js --watch",
+    "dev:build:client": "webpack --config webpack.client.js --watch"
   },
   "author": "Jaimin Desai",
   "license": "ISC",
@@ -26,6 +25,7 @@
     "concurrently": "3.5.0",
     "express": "4.15.4",
     "express-http-proxy": "1.0.6",
+    "jquery": "^2.2.3",
     "lodash": "4.17.4",
     "nodemon": "1.12.0",
     "npm-run-all": "4.1.1",
@@ -42,5 +42,6 @@
     "webpack-dev-server": "2.8.2",
     "webpack-merge": "4.1.0",
     "webpack-node-externals": "1.6.0"
-  }
+  },
+  "devDependencies": {}
 }
