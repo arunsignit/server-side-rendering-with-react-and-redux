@@ -31,8 +31,7 @@ function mapStateToProps(state){
 }
 
 function loadData(store){
- console.log('Inside Load data');
- store.dispatch(fetchUsers());
+    return store.dispatch(fetchUsers());
 }
 export {loadData};
 export default connect(mapStateToProps,{fetchUsers}) (UsersList);

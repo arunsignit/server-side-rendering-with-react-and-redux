@@ -1,23 +1,26 @@
 
+import {createStore,applyMiddleware, compose} from 'redux'
+import thunk from 'redux-thunk';
+import reducers from './reducers/index'
 import express from 'express';
 import { matchRoutes } from 'react-router-config';
 import Routes from './clients/Routes';
-
 import renderer from './helpers/renderer'
-import createStore from './helpers/createStore';
+
 const app = express();
 
 app.use(express.static('public'));
 app.get('*',(req,res) => {
   
-    const store = createStore();
+ const store = createStore(reducers,{},applyMiddleware(thunk));
 
-    const promises =  matchRoutes(Routes,req.path).map(({ route }) => {
-        return route.loadData ?route.loadData(store): null;
-     });
-
-     console.log(promises);
+const promises = matchRoutes(Routes,req.path).map(({ route }) => {
+    console.log('inside...',route.loadData);
+    return route.loadData ? route.loadData(store) : null;
+});
     
+    console.log(promises);
+
         res.send(renderer(req,store))
   
 
